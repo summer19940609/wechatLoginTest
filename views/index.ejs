@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <div id="login_container" style="width: 300px;height: 300px;"></div>
+</body>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+  var obj = new WxLogin({
+    id: "login_container",
+    appid: "wx9ffb51eb8a83ca26",
+    scope: "snsapi_login",
+    redirect_uri: "http%3A%2F%2Fums.tes-sys.com%2Fums-api%2FwechatOpen%2FwechatOpenScan",
+    state: "localhost:3000/ebook_test",
+    style: "black",
+    href: ""
+  });
+
+  console.log(decodeURI('http%3A%2F%2Fums.tes-sys.com%2Fums-api%2FwechatOpen%2FwechatOpenScan'))
+</script>
+
+</html>
